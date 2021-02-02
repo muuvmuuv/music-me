@@ -1,0 +1,94 @@
+{
+  "plugins": [
+    "import"
+  ],
+  "extends": [
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "eslint:recommended",
+    "plugin:unicorn/recommended",
+    "plugin:prettier/recommended",
+    "prettier/unicorn",
+    "preact"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "ignorePatterns": [
+    "build/"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "."
+        ]
+      }
+    }
+  },
+  "rules": {
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "whitelist": {
+          // next.js related
+          "getStaticProps": true,
+          "getServerSideProps": true
+        }
+      }
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "allowSeparatedGroups": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "pathGroupsExcludedImportTypes": [
+          "builtin"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "src/**",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        "groups": [
+          "builtin",
+          "external",
+          [
+            "internal",
+            "parent",
+            "sibling"
+          ],
+          "index",
+          "object"
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": "src/sw.js",
+      "env": {
+        "serviceworker": true
+      }
+    }
+  ]
+}

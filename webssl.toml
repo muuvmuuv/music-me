@@ -1,0 +1,17 @@
+filename="dev"
+destination="certs"
+
+domains = [
+  "marvin.lcl",
+  "marvin.digital",
+  "music.marvin.lcl",
+  "music.marvin.digital",
+]
+
+commonName              = "digital.marvin.music"
+countryName             = "DE"
+stateOrProvinceName     = "Germany"
+localityName            = "Frankfurt am Main"
+organizationName        = "Music Me"
+organizationalUnitName  = "Operations"
+emailAddress            = "marvin.heilemann+github@gmail.com"

@@ -1,0 +1,17 @@
+{
+  "printWidth": 90,
+  "semi": false,
+  "proseWrap": "always",
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": [
+        "*.scss",
+        "*.css"
+      ],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
